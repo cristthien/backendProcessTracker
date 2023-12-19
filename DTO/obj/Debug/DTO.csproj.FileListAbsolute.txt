@@ -1,0 +1,6 @@
+C:\Users\thien\source\repos\processTrackerBackend\DTO\bin\Debug\DTO.dll
+C:\Users\thien\source\repos\processTrackerBackend\DTO\bin\Debug\DTO.pdb
+C:\Users\thien\source\repos\processTrackerBackend\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\thien\source\repos\processTrackerBackend\DTO\obj\Debug\DTO.dll
+C:\Users\thien\source\repos\processTrackerBackend\DTO\obj\Debug\DTO.pdb
+C:\Users\thien\source\repos\processTrackerBackend\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache

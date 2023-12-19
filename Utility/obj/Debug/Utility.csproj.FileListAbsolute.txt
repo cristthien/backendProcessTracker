@@ -1,0 +1,17 @@
+C:\Users\thien\source\repos\processTrackerBackend\Utility\bin\Debug\Utility.dll
+C:\Users\thien\source\repos\processTrackerBackend\Utility\bin\Debug\Utility.pdb
+C:\Users\thien\source\repos\processTrackerBackend\Utility\obj\Debug\Utility.csproj.AssemblyReference.cache
+C:\Users\thien\source\repos\processTrackerBackend\Utility\obj\Debug\Utility.csproj.CoreCompileInputs.cache
+C:\Users\thien\source\repos\processTrackerBackend\Utility\obj\Debug\Utility.dll
+C:\Users\thien\source\repos\processTrackerBackend\Utility\obj\Debug\Utility.pdb
+C:\Users\thien\source\repos\processTrackerBackend\Utility\bin\Debug\BCrypt.Net-Next.dll
+C:\Users\thien\source\repos\processTrackerBackend\Utility\bin\Debug\System.Buffers.dll
+C:\Users\thien\source\repos\processTrackerBackend\Utility\bin\Debug\System.Memory.dll
+C:\Users\thien\source\repos\processTrackerBackend\Utility\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\thien\source\repos\processTrackerBackend\Utility\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\thien\source\repos\processTrackerBackend\Utility\bin\Debug\BCrypt.Net-Next.xml
+C:\Users\thien\source\repos\processTrackerBackend\Utility\bin\Debug\System.Buffers.xml
+C:\Users\thien\source\repos\processTrackerBackend\Utility\bin\Debug\System.Memory.xml
+C:\Users\thien\source\repos\processTrackerBackend\Utility\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\thien\source\repos\processTrackerBackend\Utility\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\thien\source\repos\processTrackerBackend\Utility\obj\Debug\Utility.csproj.CopyComplete
