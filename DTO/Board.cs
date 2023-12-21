@@ -25,10 +25,10 @@ namespace DTO
         
         
         [Required]
-        public User owner { get; set; }
+        public int OnwerID { get; set; }
+        public User Onwer { get; set; }
 
-
-        public List<Viewer> Viewers { get; set; }
+        public ICollection<Viewer> Users { get; set; }
 
     }
 }

@@ -11,11 +11,10 @@ namespace DTO
     public class User
     {
         [Required]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("ID")]
+        [Key]
         public int id { get; set; }
 
-        [Key]
         [Column("Username", TypeName = "NVARCHAR(50)")]
         public string username{ get; set; }
 
@@ -23,7 +22,8 @@ namespace DTO
         [Required]
         public string hashPassword { get; set; }
 
-        public List<Viewer> Viewers { get; set; } // Foreign key
+        public ICollection<Viewer> Boards { get; set; }
+
 
     }
 }

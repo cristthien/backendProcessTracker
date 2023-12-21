@@ -12,9 +12,15 @@ namespace DAT
         public static bool Insert(string username, string password) {
             AccountUtility  aUtility = new AccountUtility();
             password = aUtility.HashPassword(password);
+
             using (var dbcontext = new Context()) {
                 try
                 {
+                    var existUser = dbcontext.users.Where(u => u.username == username).FirstOrDefault();
+                    if (existUser != null ) {
+                        return false;
+                    }
+
                     var newuser = new User()
                     {
                         username = username,

@@ -7,12 +7,17 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace DTO
 {
+    [Table("Viewer")]
     public class Viewer
     {
         [Key]
-        public int userID{ get; set; }
+        public int UserBoardId { get; set; }
 
-        [Key]
-        public int boardID{ get; set; }
+        public int UserId { get; set; }
+        public User User { get; set; }
+
+        public int BoardId { get; set; }
+        public Board Board { get; set; }
+
     }
 }

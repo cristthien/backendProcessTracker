@@ -11,21 +11,16 @@ namespace DAT
     public class BoardDAT
     {
 
-        public static List<Board> GetBoards()
-        {
 
-            using (var dbcontext = new Context()) {
-                return dbcontext.boards.Include(b => b.owner).ToList();
-            }
-        }
 
 
         public static bool Insert(string name, string color, int userID)
         {
             using (var dbcontext = new Context())
             {
-                    var user = dbcontext.users.Where(u => u.id == userID).FirstOrDefault();
-                if (user != null) {
+                var user = dbcontext.users.Where(u => u.id == userID).FirstOrDefault();
+                if (user != null)
+                {
                     try
                     {
 
@@ -33,7 +28,7 @@ namespace DAT
                         {
                             name = name,
                             color = color,
-                            owner = user,
+                            OnwerID = userID,
                         };
 
                         dbcontext.boards.Add(newBoard);
@@ -47,20 +42,22 @@ namespace DAT
                         return false;
                     }
 
-                } else {
+                }
+                else
+                {
                     return false;
-                } 
+                }
 
             }
         }
 
-        public static bool UpdateName(int idBoard, string name)
+        public static bool UpdateName(int idBoard, string name, int ownerID)
         {
             using (var dbcontext = new Context())
             {
                 try
                 {
-                    var board = dbcontext.boards.Where(b => b.id == idBoard).FirstOrDefault();
+                    var board = dbcontext.boards.Where(b => (b.id == idBoard) && (b.OnwerID == ownerID)).FirstOrDefault();
                     if (board != null)
                     {
                         board.name = name;
@@ -78,13 +75,13 @@ namespace DAT
             }
         }
 
-        public static bool UpdateColor(int idBoard, string color)
+        public static bool UpdateColor(int idBoard, string color, int ownerID)
         {
             using (var dbcontext = new Context())
             {
                 try
                 {
-                    var board = dbcontext.boards.Where(b => b.id == idBoard).FirstOrDefault();
+                    var board = dbcontext.boards.Where(b => b.id == idBoard && b.OnwerID == ownerID).FirstOrDefault();
                     if (board != null)
                     {
                         board.color = color;
@@ -127,34 +124,27 @@ namespace DAT
 
             using (var dbcontext = new Context())
             {
-                var validateUser = dbcontext.users.Where(u => u.id == userID);
-                if (validateUser == null) { return false; }
-                try { 
+                var deletedBoard = dbcontext.boards.Where(b => b.id == idBoard && b.OnwerID == userID ).FirstOrDefault();
 
-                    var removeBoard = dbcontext.boards.Where(b => b.id == idBoard).FirstOrDefault();
-                    var e = dbcontext.Entry(removeBoard);
-                    e.Reference(p => p.owner).Load();
-                    if (removeBoard.owner.id == userID) {
-                        dbcontext.Remove(removeBoard);
-                        dbcontext.SaveChanges();
-
-                        return true;
-                    } 
-                     else
-                    {
-                        return false;
-                    }
-                
-                
-                } catch {
+                if (deletedBoard == null) { return false; }
+                try
+                {
+                    ViewerDAT viewerDAT = new ViewerDAT();
+                    viewerDAT.DeleteViewers(idBoard);
+                    dbcontext.Remove(deletedBoard);
+                    dbcontext.SaveChanges();
+                    return true;
+                }
+                catch
+                {
                     return false;
                 }
 
             }
 
         }
-        
 
-    
+
+
     }
 }

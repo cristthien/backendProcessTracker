@@ -26,7 +26,21 @@ namespace DAT
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Viewer>()
-             .HasKey(v => new { v.userID, v.boardID });
+                .HasKey(ub => ub.UserBoardId);
+
+            modelBuilder.Entity<Viewer>()
+                .HasOne(ub => ub.User)
+                .WithMany(u => u.Boards)
+                .HasForeignKey(ub => ub.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Viewer>()
+                .HasOne(ub => ub.Board)
+                .WithMany(b => b.Users)
+                .HasForeignKey(ub => ub.BoardId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
 
         }
 
