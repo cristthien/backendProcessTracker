@@ -156,6 +156,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BoardDAT.cs" />
+    <Compile Include="CardDAT.cs" />
+    <Compile Include="ListCardDAT.cs" />
     <Compile Include="UserDAT.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="DBController.cs" />

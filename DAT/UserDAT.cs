@@ -41,7 +41,7 @@ namespace DAT
 
 
 
-        public bool CheckLogin(string username, string password) {
+        public int  CheckLogin(string username, string password) {
             AccountUtility aUtility = new AccountUtility();
             username = username.Trim();
             using (Context dbcontext = new Context())
@@ -49,16 +49,16 @@ namespace DAT
                 var user = dbcontext.users.Where(u => u.username == username).FirstOrDefault();
                 if (user == null)
                 {
-                    return false;
+                    return -1;
                 }
 
                 if (aUtility.VerifyPassword(password, user.hashPassword))
                 {
-                    return true;
+                    return user.id;
 
                 }
                 else { 
-                    return false;
+                    return -1;
                 }
                 
 

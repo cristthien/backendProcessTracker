@@ -18,6 +18,8 @@ namespace processTrackerBackend
             DBController dbctrl = new DBController();
             UserDAT userDAT = new UserDAT();
             ViewerDAT viewerDAT = new ViewerDAT();
+            ListCardDAT listCardDAT = new ListCardDAT();
+            CardDAT cardDAT = new CardDAT();
 
             //dbctrl.DropDatabase();
             //dbctrl.CreateDatabase();
@@ -56,6 +58,8 @@ namespace processTrackerBackend
             //Console.WriteLine(BoardDAT.Insert("OS", "255, 17, 45", 1));
             //Console.WriteLine(BoardDAT.Insert("HTMT", "255, 79, 43", 3));
             //Console.WriteLine(BoardDAT.Insert("PTTK", "255, 123, 182", 3));
+            //Console.WriteLine(BoardDAT.Insert("Big Data", "255, 123, 182", 8)); // false
+
 
             // Update table name 
             //Console.WriteLine(BoardDAT.UpdateName(2, "OOP", 3)); // success
@@ -111,6 +115,101 @@ namespace processTrackerBackend
             //    Console.WriteLine("{0} - {1} - {2} - {3}\n", b.id, b.name, b.OnwerID, b.color);
 
             //}
+
+
+
+            //Console.WriteLine(listCardDAT.Insert("To Do",2));
+            //Console.WriteLine(listCardDAT.Insert("Done",2));
+            //Console.WriteLine(listCardDAT.Insert("Done",2));
+
+            //Console.WriteLine(listCardDAT.Insert("To Do", 4));
+            //Console.WriteLine(listCardDAT.Insert("Done", 4));
+            //Console.WriteLine(listCardDAT.Insert("Done", 4));
+            //Console.WriteLine(listCardDAT.Insert("Nothing", 2));
+
+
+            //Console.WriteLine(listCardDAT.Insert("To Do", 5));
+            //Console.WriteLine(listCardDAT.Insert("Done", 5));
+            //Console.WriteLine(listCardDAT.Insert("Done", 5));
+
+            //Console.WriteLine(listCardDAT.Insert("To Oo", 11));
+
+            // test update 
+            //Console.WriteLine(listCardDAT.UpdateName(1, "To Do"));
+            //Console.WriteLine(listCardDAT.UpdateName(2, "Doing"));
+
+
+
+            // test delete by id 
+
+            //Console.WriteLine(listCardDAT.DeletebyID(7));    
+            //Console.WriteLine(listCardDAT.DeletebyID(8));    
+            //Console.WriteLine(listCardDAT.DeletebyID(9));
+
+
+            //Console.WriteLine(listCardDAT.DeletebyID(10));
+            //Console.WriteLine(listCardDAT.DeletebyID(11));
+            //Console.WriteLine(listCardDAT.DeletebyID(12));
+
+            // Delete all list card whose board id is same
+            //Console.WriteLine(listCardDAT.DeleteAll(5));
+            // Check if it does not exist 
+            // Console.WriteLine(listCardDAT.DeleteAll(5));
+
+            // Get ListCards 
+            //List<ListCard> listCards = listCardDAT.Get(2);
+            //foreach(ListCard lc in listCards)
+            //{
+            //    Console.WriteLine("{0} - {1} - {2} ", lc.name, lc.location, lc.boardID);
+            //}
+
+            // Move Left 
+            //Console.WriteLine(listCardDAT.MoveLeft(2, 13));
+            //Console.WriteLine(listCardDAT.MoveLeft(2, 1)); // Fail
+
+            // Move Right  
+            // Console.WriteLine(ListCardDAT.MoveRight(2, 3));
+            //Console.WriteLine(ListCardDAT.MoveRight(2, 13));
+
+            // Card 
+            // Insert
+            //Console.WriteLine(cardDAT.Insert("lc 1 card 1 board 2", "day laf hoat dong hay", 1));
+            //Console.WriteLine(cardDAT.Insert("lc 1 card 2 board 2", "day laf hoat dong hay", 1));
+            //Console.WriteLine(cardDAT.Insert("lc 2 card 1 board 2", "day laf hoat dong hay", 2));
+            //Console.WriteLine(cardDAT.Insert("lc 2 card 2 board 2", "day laf hoat dong hay", 2));
+            //Console.WriteLine(cardDAT.Insert("lc 2 card 3 board 2", "day laf hoat dong hay", 2));
+            //Console.WriteLine(cardDAT.Insert("lc 4 card 1 board 4", "day laf hoat dong hay", 4));
+            //Console.WriteLine(cardDAT.Insert("lc 4 card 2 board 4", "day laf hoat dong hay", 4));
+            //Console.WriteLine(cardDAT.Insert("lc 5 card 1 board 4", "day laf hoat dong hay", 5));
+            //Console.WriteLine(cardDAT.Insert("lc 6 card 1 board 4", "day laf hoat dong hay", 6));
+            //Console.WriteLine(cardDAT.Insert("lc 5 card 2 board 4", "day laf hoat dong hay", 5));
+
+            // Update title
+
+            //Console.WriteLine(CardDAT.UpdateTittle(1, "lc 1 card 1 board 2 after change"));
+            //Console.WriteLine(CardDAT.UpdateTittle(11, "lc 1 card 11 board 2 after change"));
+
+
+            // update des
+            //Console.WriteLine(CardDAT.UpdateDescription(1, "After change"));
+           
+             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -13,6 +13,8 @@ namespace DAT
         public DbSet<User> users { get; set; }
         public DbSet<Board> boards { get; set; }
         public DbSet<Viewer> viewers { get; set; }
+        public DbSet<ListCard> listCards { get; set; }
+        public DbSet<Card> cards { get; set; }
 
         private const string connectionString = @"Data Source=DESKTOP-4TBCLIN;Initial Catalog=ProcessTracker;Integrated Security=True";
 

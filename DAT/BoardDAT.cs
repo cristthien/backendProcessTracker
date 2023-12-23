@@ -10,11 +10,7 @@ namespace DAT
 {
     public class BoardDAT
     {
-
-
-
-
-        public static bool Insert(string name, string color, int userID)
+        public static int Insert(string name, string color, int userID)
         {
             using (var dbcontext = new Context())
             {
@@ -34,18 +30,18 @@ namespace DAT
                         dbcontext.boards.Add(newBoard);
                         dbcontext.SaveChanges();
 
-                        return true;
+                        return newBoard.id;
 
                     }
                     catch
                     {
-                        return false;
+                        return -1;
                     }
 
                 }
                 else
                 {
-                    return false;
+                    return -1;
                 }
 
             }
