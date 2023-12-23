@@ -92,6 +92,31 @@ namespace DAT
                 catch { return false; }
             }
         }
+        public bool DeleteViewer(int boardID, int userID)
+        {
+
+
+            using (var dbcontext = new Context())
+            {
+                try
+                {
+                    var viewer = dbcontext.viewers.Where(v => v.BoardId == boardID && v.UserId == userID).FirstOrDefault();
+                    if (viewer!= null)
+                    {
+                        dbcontext.Remove(viewer);
+                        dbcontext.SaveChanges();
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+
+                }
+                catch { return false; }
+            }
+        }
         // Khi xóa một board thì nó thay đổi như thế nào đối với viwer 
     }
 }
