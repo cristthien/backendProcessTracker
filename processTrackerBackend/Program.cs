@@ -22,9 +22,11 @@ namespace processTrackerBackend
             CardDAT cardDAT = new CardDAT();
 
             //dbctrl.DropDatabase();
+
             //dbctrl.CreateDatabase();
 
             // Insert User 
+            // Click đang ki
 
             //Console.WriteLine(UserDAT.Insert("cristthien0", "Thien@123"));
             //Console.WriteLine(UserDAT.Insert("cristthien1", "Thien@123"));
@@ -36,7 +38,7 @@ namespace processTrackerBackend
             //Console.WriteLine(UserDAT.Insert("cristthien4", "thien@123"));
             // CheckLogin
             // True 
-            //Console.WriteLine(userDAT.CheckLogin("cristthien2", "Thien@123"));
+            Console.WriteLine(userDAT.CheckLogin("cristthien0", "Thien@123"));
             //Console.WriteLine(userDAT.CheckLogin("cristthieN2", "Thien@123"));
             //Console.WriteLine(userDAT.CheckLogin(" cristthien2 ", "Thien@123"));
             // False 
@@ -192,8 +194,8 @@ namespace processTrackerBackend
 
             // update des
             //Console.WriteLine(CardDAT.UpdateDescription(1, "After change"));
-           
-             
+
+
 
 
 

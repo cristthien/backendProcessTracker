@@ -9,6 +9,16 @@ namespace DAT
 {
     public class CardDAT
     {
+        public List<Card> Get( int listCardID ){
+            using (var dbcontext = new Context()) {
+                try {
+                    List<Card> cards = dbcontext.cards.Where(c => c.listCardid == listCardID).ToList();
+                    return cards;
+                } catch {
+                    return null;
+                }
+            }
+        }
         public int Insert(string title, string des, int listCardId ) {
 
             using (var dbcontext = new Context())
