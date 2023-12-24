@@ -38,6 +38,25 @@ namespace DAT
                 }
             }
         }
+        public static string GetUsername(int userID) {
+            using (var dbcontext = new Context())
+            {
+                    User user = dbcontext.users.Where(u => u.id == userID).FirstOrDefault();
+                try
+                {
+                    if (user != null)
+                    {
+                        return user.username;
+                    }
+                    else {
+                        return "";
+                    }
+                }
+                catch {
+                    return "";
+                }
+            }
+        }
 
 
 

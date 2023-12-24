@@ -33,12 +33,15 @@ namespace processTrackerBackend
             //Console.WriteLine(UserDAT.Insert("cristthien2", "Thien@123"));
             //Console.WriteLine(UserDAT.Insert("cristthien3", "Thien@123"));
             //Console.WriteLine(UserDAT.Insert("cristthien4", "Thien@123"));
+            // Get username by id
+            Console.WriteLine(UserDAT.GetUsername(2));
+
 
             // Insert Fail
             //Console.WriteLine(UserDAT.Insert("cristthien4", "thien@123"));
             // CheckLogin
             // True 
-            Console.WriteLine(userDAT.CheckLogin("cristthien0", "Thien@123"));
+            //Console.WriteLine(userDAT.CheckLogin("cristthien0", "Thien@123"));
             //Console.WriteLine(userDAT.CheckLogin("cristthieN2", "Thien@123"));
             //Console.WriteLine(userDAT.CheckLogin(" cristthien2 ", "Thien@123"));
             // False 
