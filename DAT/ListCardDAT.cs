@@ -127,7 +127,7 @@ namespace DAT
 
                 try
                 {
-                    List<ListCard> selectedlistCards = dbcontext.listCards.Where(lc => lc.boardID == BoardID).ToList();
+                    List<ListCard> selectedlistCards = dbcontext.listCards.Where(lc => lc.boardID == BoardID).OrderBy(lc => lc.location).ToList();
                     if (selectedlistCards.Count > 1)
                     {
                         int indexCurrent = selectedlistCards.FindIndex(lc => lc.id == ListCardID);
@@ -162,7 +162,7 @@ namespace DAT
 
                 try
                 {
-                    List<ListCard> selectedlistCards = dbcontext.listCards.Where(lc => lc.boardID == BoardID).ToList();
+                    List<ListCard> selectedlistCards = dbcontext.listCards.Where(lc => lc.boardID == BoardID).OrderBy(lc => lc.location).ToList();
                     if (selectedlistCards.Count > 1)
                     {
                         int indexCurrent = selectedlistCards.FindIndex(lc => lc.id == ListCardID);

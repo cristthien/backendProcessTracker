@@ -133,7 +133,7 @@ namespace DAT
 
                 try
                 {
-                    List<Card> selectedCards = dbcontext.cards.Where(c => c.listCardid == listCardID).ToList();
+                    List<Card> selectedCards = dbcontext.cards.Where(c => c.listCardid == listCardID).OrderBy(c => c.location).ToList();
                     if (selectedCards.Count > 1)
                     {
                         int indexCurrent = selectedCards.FindIndex(lc => lc.id == cardID);
@@ -170,7 +170,7 @@ namespace DAT
 
                 try
                 {
-                    List<Card> selectedCards = dbcontext.cards.Where(c => c.listCardid == listCardID).ToList();
+                    List<Card> selectedCards = dbcontext.cards.Where(c => c.listCardid == listCardID).OrderBy(c => c.location).ToList();
                     if (selectedCards.Count > 1)
                     {
                         int indexCurrent = selectedCards.FindIndex(lc => lc.id == cardID);
@@ -203,7 +203,7 @@ namespace DAT
         public bool MoveHorizontally(int cardID,int listCardID ) {
             using (var dbcontext = new Context()) {
                 try {
-                    List<Card> cards = dbcontext.cards.Where(c => c.listCardid == listCardID).ToList();
+                    List<Card> cards = dbcontext.cards.Where(c => c.listCardid == listCardID).OrderBy(c => c.location).ToList();
                     Card lastCard = cards.LastOrDefault();
                     Card changedCard = dbcontext.cards.Where(c => c.id == cardID).FirstOrDefault();
                     if (changedCard != null)
