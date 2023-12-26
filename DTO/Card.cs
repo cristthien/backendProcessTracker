@@ -16,6 +16,7 @@ namespace DTO
 
         public string tittle { get; set; }
         public string desciption { get; set; }
+        public string activity { get; set; }
         public int location { get; set; }
 
         public int listCardid { get; set; }

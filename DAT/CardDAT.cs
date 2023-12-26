@@ -19,7 +19,7 @@ namespace DAT
                 }
             }
         }
-        public int Insert(string title, string des, int listCardId ) {
+        public int Insert(string title, string des,string activity ,int listCardId ) {
 
             using (var dbcontext = new Context())
             {
@@ -39,6 +39,7 @@ namespace DAT
                         tittle = title,
                         desciption = des,
                         location = location,
+                        activity= activity,
                         listCardid= listCardId
 
                     };
@@ -87,6 +88,28 @@ namespace DAT
                     if (card != null)
                     {
                         card.desciption = des;
+                        dbcontext.SaveChanges();
+                        return true;
+                    }
+                    else { return false; }
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+
+        }
+        public static bool UpdateActivity(int cardID, string act)
+        {
+            using (var dbcontext = new Context())
+            {
+                try
+                {
+                    var card = dbcontext.cards.Where(c => c.id == cardID).FirstOrDefault();
+                    if (card != null)
+                    {
+                        card.activity = act;
                         dbcontext.SaveChanges();
                         return true;
                     }
