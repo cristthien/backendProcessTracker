@@ -9,6 +9,24 @@ namespace DAT
 {
     public class UserDAT
     {
+        public int GetID(string username ){
+            using (var dbcontext = new Context())
+            {
+                try {
+                    User selectedUser = dbcontext.users.Where(u => u.username == username).FirstOrDefault();
+                    if(selectedUser != null)
+                    {
+
+                        return selectedUser.id;
+                    }else
+                    {
+                        return -1;
+                    }
+                }catch {
+                    return -1;
+                }
+            }
+        }
         public static bool Insert(string username, string password) {
             AccountUtility  aUtility = new AccountUtility();
             password = aUtility.HashPassword(password);

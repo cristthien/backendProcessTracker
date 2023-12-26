@@ -10,6 +10,7 @@ namespace DAT
 {
     public class BoardDAT
     {
+
         public static int Insert(string name, string color, int userID)
         {
             using (var dbcontext = new Context())
