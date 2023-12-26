@@ -130,11 +130,26 @@ namespace DAT
                     List<ListCard> selectedlistCards = dbcontext.listCards.Where(lc => lc.boardID == BoardID).OrderBy(lc => lc.location).ToList();
                     if (selectedlistCards.Count > 1)
                     {
+
                         int indexCurrent = selectedlistCards.FindIndex(lc => lc.id == ListCardID);
                         if (indexCurrent == 0) { return false; }
-                        int tmp = selectedlistCards[indexCurrent].location;
-                        selectedlistCards[indexCurrent].location = selectedlistCards[indexCurrent - 1].location;
-                        selectedlistCards[indexCurrent - 1].location = tmp;
+                        int rightID = selectedlistCards[indexCurrent].id;
+                        int rightLocation = selectedlistCards[indexCurrent].location;
+                        int leftID = selectedlistCards[indexCurrent-1].id;
+                        int leftLocation = selectedlistCards[indexCurrent-1].location;
+                        List<Card> rightCardsToUpdate = dbcontext.cards.Where(c => c.listCardid == rightID).ToList();
+                        List<Card> leftCardsToUpdate = dbcontext.cards.Where(c => c.listCardid == leftID).ToList();
+                        foreach (Card card in rightCardsToUpdate)
+                        {
+                            card.listCardid = leftID;
+                        }
+                        foreach (Card card in leftCardsToUpdate)
+                        {
+                            card.listCardid= rightID;
+                        }
+                        int temp = rightLocation;
+                        rightLocation = leftLocation;
+                        leftLocation = temp;
                         dbcontext.SaveChanges();
                         return true;
 

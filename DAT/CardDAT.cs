@@ -206,7 +206,7 @@ namespace DAT
                     List<Card> cards = dbcontext.cards.Where(c => c.listCardid == listCardID).OrderBy(c => c.location).ToList();
                     Card lastCard = cards.LastOrDefault();
                     Card changedCard = dbcontext.cards.Where(c => c.id == cardID).FirstOrDefault();
-                    if (changedCard != null)
+                    if (changedCard != null && lastCard != null)
                     {
                         int location = 0;
                         if (lastCard != null)
@@ -214,6 +214,7 @@ namespace DAT
                             location = lastCard.location + 1;
                         }
                         changedCard.location = location;
+                        changedCard.listCardid = listCardID;
                         dbcontext.SaveChanges();
                         return true;
                     }
